@@ -4,6 +4,6 @@ const currentController = require('../controllers/current');
 
 const currentRouter = express.Router();
 
-currentRouter.get('/:city?', currentController.dataCurrentCity);
+currentRouter.get('/:city?/:countryCode?', currentController.dataCurrentCity);
 
 module.exports = currentRouter;

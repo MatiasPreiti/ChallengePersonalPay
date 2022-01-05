@@ -6,7 +6,7 @@ const getLocation = async (req, res, next) => {
     const location = await locationsServices.getLocation(ip);
     res.status(200).json({
       success: true,
-      location: location.city
+      location: location
     });
   } catch (error) {
     next(error);
