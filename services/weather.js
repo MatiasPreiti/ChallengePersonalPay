@@ -9,7 +9,6 @@ const dataCurrentCity = async (city, country) => {
     const data = await axios(openWeatherCurrent);
     return data.data;
   } catch (error) {
-    console.log(error);
     return error;
   }
 };
@@ -21,7 +20,6 @@ const dataForecastCity = async (city, country) => {
     const data = await axios(openWheatherForecast);
     return data.data;
   } catch (error) {
-    console.log(error);
     return error;
   }
 };

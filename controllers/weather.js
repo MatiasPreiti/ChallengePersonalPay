@@ -18,11 +18,18 @@ const dataCurrentCity = async (req, res, next) => {
     const city = req.params.city;
     const countryCode = req.params.countryCode;
     const response = await weatherServices.dataCurrentCity(city, countryCode);
-    res.status(200).json({
-      city: city,
-      weather: response.weather,
-      temp: response.main
-    });
+    if (response.name == 'Error') {
+      res.status(404).json({
+        status: 404,
+        error: response.message
+      });
+    } else {
+      res.status(200).json({
+        city: city,
+        weather: response.weather,
+        temp: response.main
+      });
+    }
   }
 };
 
@@ -42,10 +49,17 @@ const dataForecastCity = async (req, res, next) => {
     const city = req.params.city;
     const countryCode = req.params.countryCode;
     const response = await weatherServices.dataForecastCity(city, countryCode);
-    res.status(200).json({
-      city: city,
-      weather: response.list
-    });
+    if (response.name == 'Error') {
+      res.status(404).json({
+        status: 404,
+        error: response.message
+      });
+    } else {
+      res.status(200).json({
+        city: city,
+        weather: response.list
+      });
+    }
   }
 };
 
