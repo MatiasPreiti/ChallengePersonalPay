@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const APIkey = '********************';
+const APIkey = 'e758169540fefcaf4a8857b0f98a7a61';
 
 const dataCurrentCity = async (city, country) => {
   const openWeatherCurrent = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${APIkey}`;
